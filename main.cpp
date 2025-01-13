@@ -18,7 +18,7 @@ int main() {
     KaloAlgebra::Vector vec(3, 2.0);
     std::cout << "\nVector Magnitude: " << vec.magnitude() << "\n";
     
-    std::cout<<"enter the value: ";
+    std::cout<<"enter the amazing value: ";
     std::cin>>x; 
 
     std::cout<<x<<"\n"; 
