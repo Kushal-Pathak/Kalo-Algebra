@@ -1,0 +1,11 @@
+# Ignore the build directory
+/build/
+
+# Ignore Visual Studio Code configuration folder
+.vscode/
+
+# Ignore the temp directory (if used for temporary files)
+temp/
+
+# Ignore executable files
+*.exe
