@@ -51,13 +51,15 @@ void Vector::setElement(int index, double value)
         throw std::invalid_argument("Index out of range!");
     data[index] = value;
 }
-void Vector::print() const
-{
-    for (double value : data)
-    {
-        std::cout << value << std::endl;
+
+void Vector::print() const {
+    std::cout << "[ ";
+    for (double value : data) {
+        std::cout << value << " ";
     }
+    std::cout << "]" << std::endl;  
 }
+
 
 // vector operations
 double Vector::magnitude() const
@@ -103,6 +105,24 @@ Vector Vector::cross(const Vector &other) const
 
     });
 }
+
+Vector Vector::projectOnto(const Vector &other) const {
+    double denominator = other.dot(other); 
+    if(denominator == 0) throw std::invalid_argument("Cannot project onto a zero vector!");
+    return other * (this->dot(other) / denominator); 
+}
+
+Vector Vector::hadamard(const Vector &other) const {
+    if (size != other.size) 
+        throw std::invalid_argument("Vectors must be of the same size!");
+    
+    Vector result(size); 
+    for (int i = 0; i < size; i++) 
+        result.data[i] = data[i] * other.data[i];
+    
+    return result; 
+}
+
 
 // Arithmetic operators
 Vector Vector::operator+(const Vector &other) const

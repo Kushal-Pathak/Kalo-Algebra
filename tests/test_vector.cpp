@@ -179,6 +179,28 @@ void testVectorDotProduct2()
     }
 }
 
+void testProjectOnto() {
+    Vector v1(std::vector<double>{3, 4});
+    Vector v2(std::vector<double>{1, 0});
+
+    Vector projected = v1.projectOnto(v2); 
+    std::cout<<"Projection of v1 onto v2: "; 
+    projected.print(); 
+}
+
+void testhadamard() {
+    // Create Vector objects v1 and v2
+    Vector v1(std::vector<double>{1.0, 2.0, 3.0});
+    Vector v2(std::vector<double>{4.0, 5.0, 6.0});
+
+    // Calculate the Hadamard product
+    Vector hadamardResult = v1.hadamard(v2); 
+
+    // Print the result
+    std::cout << "Hadamard product of v1 and v2: "; 
+    hadamardResult.print(); 
+}
+
 void testVectorCopyAssignment()
 {
     // Create a source vector
@@ -294,20 +316,22 @@ void testVectorRandom()
     }
 }
 
-int main()
-{
-    testVectorMagnitude();
-    testVectorNormalize();
-    testVectorDotProduct();
-    testVectorCrossProduct();
-    testVectorAddition();
-    testVectorSubtraction();
-    testVectorScalarMultiplication();
-    testVectorDotProduct2();
-    testVectorCopyAssignment();
-    testVectorMoveAssignment();
-    testVectorComparisonOperators();
-    testVectorZero();
-    testVectorRandom();
-    return 0;
-}
+// int main()
+// {
+//     testVectorMagnitude();
+//     testVectorNormalize();
+//     testVectorDotProduct();
+//     testVectorCrossProduct();
+//     testVectorAddition();
+//     testVectorSubtraction();
+//     testVectorScalarMultiplication();
+//     testVectorDotProduct2();
+//     testProjectOnto(); 
+//     testhadamard();
+//     testVectorCopyAssignment();
+//     testVectorMoveAssignment();
+//     testVectorComparisonOperators();
+//     testVectorZero();
+//     testVectorRandom();
+//     return 0;
+// }

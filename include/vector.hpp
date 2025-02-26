@@ -33,6 +33,8 @@ public:
     Vector normalize() const;                // returns normalized vector
     double dot(const Vector &other) const;   // dot product
     Vector cross(const Vector &other) const; // cross product (only for 3d vectors)
+    Vector projectOnto(const Vector &other) const; // useful in physics for collision resolution and neural network for weight adjustment
+    Vector hadamard(const Vector &other) const; // Essential in NN for element-wise weight updates 
 
     // Arithmetic Operators
     Vector operator+(const Vector &other) const; // vector addition
