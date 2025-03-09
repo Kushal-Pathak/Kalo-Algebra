@@ -1,5 +1,6 @@
 #include "kalo_algebra.hpp"
 #include <iostream>
+#include "tests/test_vector.cpp"
 
 int main() {
     // Create a 3x3 matrix and set elements
@@ -17,5 +18,10 @@ int main() {
     KaloAlgebra::Vector vec(3, 2.0);
     std::cout << "\nVector Magnitude: " << vec.magnitude() << "\n";
 
+    // test hadamard and test projection
+    testhadamard(); 
+    std::cout<<"\n"; 
+    testProjectOnto(); 
+     
     return 0;
 }
